@@ -1,0 +1,48 @@
+python manage.py shell
+
+>>>from imdb.models import Actor,Genre,Director,Movie
+
+orm query for createing genre objects
+
+>>>Genre.objects.create(name="action")
+
+orm qury for creating actor object
+
+>>>Actor.objects.create(name="vineeth")
+
+orm query for creating director object
+
+>>Director.objects.create(name="jeethu joseph")
+
+orm query for creating a movie object
+
+>>>director_obj=Director.objects.get(id=3)
+
+>>>movie_obj=Movie.objects.create(title="aadujeevitham",year="2024",director_object=director_obj)
+
+
+adding actor object to specific movie(working with many to many field)
+
+>>>actor_obj=Actor.objects.get(id=7)
+
+>>>movie_obj=Movie.objects.get(id=2)
+
+adding
+
+movie_obj.actor_object.add(actor_obj)
+
+
+d1=Director.objects.get(id=1)
+Movie.objects.create(title="hridhayam",year="2022",director_object=d1)
+
+a1=Actor.objects.get(id=2)
+a2=Actor.objects.get(id=3)
+
+movie_obj=Movie.objects.get(id=5)
+
+movie_obj.actor_object.add(a1,a2)
+
+g1=Genre.objects.get(id=3)
+g2=Genre.objects.get(id=4)
+
+movie_obj.genre_object.add(g1,g2)

@@ -1,0 +1,82 @@
+ 
+authentication
+
+schema:User
+
+Attributes: [username,email,password]
+
+1)api for creating user account
+
+    url:http://127.0.0.1:8000/api/register/
+
+    method:POST
+
+    body:{
+        usernane
+        email
+        password
+    }
+
+
+
+============================================================================
+
+schema : Expense
+Attributes:[id, title,amount, category,user_object,priority,created_date]
+
+
+
+1)api for listing all expenses
+
+    url :: http://127.0.0.1:8000/api/expenses/
+
+    method:get
+
+    body:nill
+
+    authorization: {username, password} Basic authentication ,token, jwt    
+
+
+2)api for adding a new expense
+
+    url:http://127.0.0.1:8000/api/expenses/
+
+    method : POST
+
+    body:{title,amount, category,priority}
+
+    authorization:{username, password} BasicAuthentication
+
+3)api for adding fetching expense detail
+
+    url:http://127.0.0.1:8000/api/expenses/{id}/
+
+    method: get
+
+    body:nill
+
+    authorization: {username, password} BasicAuthentication
+
+
+4)api for adding updating expense detail
+
+    url:http://127.0.0.1:8000/api/expenses/{id}/
+
+    method: put
+
+    body:{title,amount, category,priority}
+
+    authorization:{username, password} BasicAuthentication
+
+
+5)api for adding deleting expense detail
+
+    url:http://127.0.0.1:8000/api/expenses/{id}/
+
+    method: delete
+
+    body:nill
+
+    authorization:{username, password} BasicAuthentication
+
+
